@@ -425,7 +425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 641b7ef981eccf14e8370a6ae2618bb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textureSize: 512
+  textureSize: 1024
   clearColor: {r: 0, g: 0, b: 0, a: 0}
   paintPropertyName: _Paint
   paintTexture: {fileID: 0}

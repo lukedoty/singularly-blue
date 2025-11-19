@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62fc820180670104a8c5b8de6235d06e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_startScene: Luke Dev Scene
+  m_startScene: demo city 2
 --- !u!114 &503168627
 MonoBehaviour:
   m_ObjectHideFlags: 0

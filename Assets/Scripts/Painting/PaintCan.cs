@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PaintCan : MonoBehaviour
 {
+	private Camera m_cam;
+
 	public float MaxDistance = 10f;
 	public LayerMask PaintMask = ~0;
 
@@ -18,14 +20,12 @@ public class PaintCan : MonoBehaviour
 	[Header("VFX")]
 	public ParticleSystem SprayVFX;
 
-	private Camera m_cam;
+    private void Awake()
+    {
+		m_cam = Camera.main;
+    }
 
-	void Reset()
-	{
-		if (m_cam == null) m_cam = Camera.main;
-	}
-
-	void Update()
+    void Update()
 	{
 		bool spraying = Input.GetKey(SprayKey);
 

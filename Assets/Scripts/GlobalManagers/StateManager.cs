@@ -39,6 +39,11 @@ public class StateManager : MonoBehaviour
         NewState();
     }
 
+    private void Update()
+    {
+        m_activeState.TimePlayedSeconds += Time.deltaTime;
+    }
+
     public void NewState()
     {
         m_activeState = new();

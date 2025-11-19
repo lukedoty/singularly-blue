@@ -9,7 +9,7 @@ public class State
     public uint SaveID;
     public UDateTime SaveCreated;
     public UDateTime LastSaved;
-    public uint TimePlayedSeconds;
+    public float TimePlayedSeconds;
 }
 
 [CreateAssetMenu(fileName = "New State Asset", menuName = "Scriptable Objects/State Asset")]

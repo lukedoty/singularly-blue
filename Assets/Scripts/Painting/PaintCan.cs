@@ -15,7 +15,7 @@ public class PaintCan : MonoBehaviour
 	[Header("Spray Behaviour")]
 	public float SprayAdditiveLevel = 2f;
 	public float DistanceFalloffPower = 1.2f;
-	public KeyCode SprayKey = KeyCode.X;
+	public KeyCode SprayKey = KeyCode.Mouse0;
 
 	[Header("VFX")]
 	public ParticleSystem SprayVFX;

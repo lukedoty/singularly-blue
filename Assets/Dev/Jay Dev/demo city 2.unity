@@ -218,6 +218,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6268786117460716791}
     - target: {fileID: 3651515786218486408, guid: ae3f9c287439278468a61946950b4db3, type: 3}
+      propertyPath: SprayVFX
+      value: 
+      objectReference: {fileID: 1489395846}
+    - target: {fileID: 3651515786218486408, guid: ae3f9c287439278468a61946950b4db3, type: 3}
       propertyPath: hardness
       value: 0
       objectReference: {fileID: 0}
@@ -238,12 +242,28 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3662177578827990161, guid: ae3f9c287439278468a61946950b4db3, type: 3}
+      propertyPath: prewarm
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662177578827990161, guid: ae3f9c287439278468a61946950b4db3, type: 3}
       propertyPath: lengthInSec
-      value: 0.99
+      value: 1.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662177578827990161, guid: ae3f9c287439278468a61946950b4db3, type: 3}
+      propertyPath: playOnAwake
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3662177578827990161, guid: ae3f9c287439278468a61946950b4db3, type: 3}
       propertyPath: EmissionModule.enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662177578827990161, guid: ae3f9c287439278468a61946950b4db3, type: 3}
+      propertyPath: RotationModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662177578827990161, guid: ae3f9c287439278468a61946950b4db3, type: 3}
+      propertyPath: RotationModule.separateAxes
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3662177578827990161, guid: ae3f9c287439278468a61946950b4db3, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
@@ -252,6 +272,14 @@ PrefabInstance:
     - target: {fileID: 3662177578827990161, guid: ae3f9c287439278468a61946950b4db3, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
       value: 1.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662177578827990161, guid: ae3f9c287439278468a61946950b4db3, type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: 1.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662177578827990161, guid: ae3f9c287439278468a61946950b4db3, type: 3}
+      propertyPath: LifetimeByEmitterSpeedModule.enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3662177578827990161, guid: ae3f9c287439278468a61946950b4db3, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.atime1
@@ -425,10 +453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 641b7ef981eccf14e8370a6ae2618bb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textureSize: 1024
-  clearColor: {r: 0, g: 0, b: 0, a: 0}
-  paintPropertyName: _Paint
-  paintTexture: {fileID: 0}
+  TextureSize: 2048
 --- !u!1 &862144473
 GameObject:
   m_ObjectHideFlags: 0

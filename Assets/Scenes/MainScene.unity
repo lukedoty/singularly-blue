@@ -749,10 +749,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementEnabled: 1
   extensionsEnabled: 0
-  slopeSlideEnabled: 1
-  sprintEnabled: 0
+  slopeSlideEnabled: 0
+  sprintEnabled: 1
   momentumEnabled: 1
-  crouchEnabled: 1
+  crouchEnabled: 0
   jumpEnabled: 1
   thirdPersonMode: 0
   mouseLookEnabled: 1
@@ -776,23 +776,23 @@ MonoBehaviour:
   minJumpHeight: 1
   jumpWhileSliding: 0
   slopeJumpKickbackSpeed: 10
-  gravity: 41
+  gravity: 38
   baseGroundForce: 3
   maxGroundForce: 30
   gravityCap: 80
   baseFallVelocity: 5
   airResistance: 4
-  airMoveSpeed: 3.5
+  airMoveSpeed: 5
   airStrafeMult: 0.8
   airBackwardMult: 0.6
   airSprintMult: 2
-  moveSpeed: 3.5
+  moveSpeed: 5
   slopeSlideSpeed: 10
   acceleration: 50
   deceleration: 40
   sprintToggleStyle: 0
   sprintByDefault: 0
-  sprintMult: 2
+  sprintMult: 1.75
   strafeMult: 0.8
   backwardMult: 0.5
   sensitivity: 10
@@ -861,7 +861,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1814643072}
-  - {fileID: 1646674692}
   m_Father: {fileID: 881113879}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &704214997
@@ -3050,92 +3049,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_artifactTexture: {fileID: 2800000, guid: f2d8f49c52efa9c49bc4a4adca7f27ae, type: 3}
   m_coverageTaget: 0.8
---- !u!1 &1646674691
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1646674692}
-  - component: {fileID: 1646674694}
-  - component: {fileID: 1646674693}
-  m_Layer: 8
-  m_Name: Capsule
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1646674692
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1646674691}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.83, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 672510293}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &1646674693
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1646674691}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1646674694
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1646674691}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1735846333
 GameObject:
   m_ObjectHideFlags: 0
@@ -3242,7 +3155,7 @@ Transform:
   m_GameObject: {fileID: 1814643071}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

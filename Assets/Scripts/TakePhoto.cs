@@ -6,20 +6,21 @@ using UnityEngine.UI;
 public class TakePhoto : MonoBehaviour
 {
     private bool photoTaken = false;
+
+    [SerializeField]
     private GameObject cameraMenu;
 
     [SerializeField]
     private RenderTexture cameraRenderTexture;
     [SerializeField]
     private RenderTexture photoOneTexture;
-    [SerializeField]
-    private GameObject photoOneImage;
+    //[SerializeField]
+    //private GameObject photoOneImage;
     [SerializeField]
     private GameObject canBorder;
     void Start()
     {
-        photoOneImage.SetActive(false);
-        cameraMenu = GameObject.FindWithTag("CameraUI");
+        //photoOneImage.SetActive(false);
         canBorder.SetActive(false);
     }
     void Update()
@@ -48,7 +49,7 @@ public class TakePhoto : MonoBehaviour
                             {
                                 Debug.Log("hit artifact");
                                 this.GetComponent<Camera>().targetTexture = photoOneTexture;
-                                photoOneImage.SetActive(true);
+                                //photoOneImage.SetActive(true);
                                 photoTaken = true;
                             }
                     }

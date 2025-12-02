@@ -15,11 +15,12 @@ public class TakePhoto : MonoBehaviour
     [SerializeField]
     private GameObject photoOneImage;
     [SerializeField]
-    private GameObject cantBorder;
+    private GameObject canBorder;
     void Start()
     {
         photoOneImage.SetActive(false);
         cameraMenu = GameObject.FindWithTag("CameraUI");
+        canBorder.SetActive(false);
     }
     void Update()
     {
@@ -28,23 +29,31 @@ public class TakePhoto : MonoBehaviour
             this.GetComponent<Camera>().targetTexture = cameraRenderTexture;
         }
 
+        canBorder.SetActive(false);
+
         RaycastHit hit;
         Vector3 fwd = transform.TransformDirection(Vector3.forward);
 
-        if (photoTaken)
-        {
-            this.GetComponent<Camera>().targetTexture = cameraRenderTexture;
-        }
-        if (Input.GetKeyDown(KeyCode.G) && cameraMenu.activeSelf)
+        if (cameraMenu.activeSelf)
         {
             if (Physics.Raycast(transform.position, fwd, out hit))
+            {
                 if (hit.transform.gameObject.GetComponent<Artifact>())
                 {
-                    Debug.Log("hit artifact");
-                    this.GetComponent<Camera>().targetTexture = photoOneTexture;
-                    photoOneImage.SetActive(true);
-                    photoTaken = true;
+                    canBorder.SetActive(true);
+                    if (Input.GetKeyDown(KeyCode.G))
+                    {
+                        if (Physics.Raycast(transform.position, fwd, out hit))
+                            if (hit.transform.gameObject.GetComponent<Artifact>())
+                            {
+                                Debug.Log("hit artifact");
+                                this.GetComponent<Camera>().targetTexture = photoOneTexture;
+                                photoOneImage.SetActive(true);
+                                photoTaken = true;
+                            }
+                    }
                 }
+            }
         }
     }
 }

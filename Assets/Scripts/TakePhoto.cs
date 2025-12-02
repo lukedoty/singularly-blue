@@ -14,6 +14,8 @@ public class TakePhoto : MonoBehaviour
     private RenderTexture photoOneTexture;
     [SerializeField]
     private GameObject photoOneImage;
+    [SerializeField]
+    private GameObject cantBorder;
     void Start()
     {
         photoOneImage.SetActive(false);
@@ -25,13 +27,24 @@ public class TakePhoto : MonoBehaviour
         {
             this.GetComponent<Camera>().targetTexture = cameraRenderTexture;
         }
+
+        RaycastHit hit;
+        Vector3 fwd = transform.TransformDirection(Vector3.forward);
+
+        if (photoTaken)
+        {
+            this.GetComponent<Camera>().targetTexture = cameraRenderTexture;
+        }
         if (Input.GetKeyDown(KeyCode.G) && cameraMenu.activeSelf)
         {
-            this.GetComponent<Camera>().targetTexture = photoOneTexture;
-            photoOneImage.SetActive(true);
-            Debug.Log("photo");
-            photoTaken = true;
+            if (Physics.Raycast(transform.position, fwd, out hit))
+                if (hit.transform.gameObject.GetComponent<Artifact>())
+                {
+                    Debug.Log("hit artifact");
+                    this.GetComponent<Camera>().targetTexture = photoOneTexture;
+                    photoOneImage.SetActive(true);
+                    photoTaken = true;
+                }
         }
-
     }
 }

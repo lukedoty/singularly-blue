@@ -13,12 +13,11 @@ public class JournalManager : MonoBehaviour
 
     void Start()
     {
-        JournalElement[] j = GetComponentsInChildren<JournalElement>();
+        JournalElement[] j = transform.GetChild(0).GetComponentsInChildren<JournalElement>();
         for (int i = 0; i < j.Length; i++)
         {
             if (j[i].Artifact == null) continue;
             Elements.Add(j[i].Artifact, j[i]);
         }
     }
-
 }

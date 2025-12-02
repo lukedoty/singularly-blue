@@ -10,28 +10,37 @@ public class TakePhoto : MonoBehaviour
 
     [SerializeField]
     private GameObject cameraMenu;
-
     [SerializeField]
     private RenderTexture cameraRenderTexture;
-    [SerializeField]
-    private RenderTexture photoOneTexture;
-    //[SerializeField]
-    //private GameObject photoOneImage;
+    private RenderTexture photoRenderTexture;
     [SerializeField]
     private GameObject canBorder;
+    [SerializeField] JournalManager journalManager;
+
+    private RaycastHit hit;
+
     void Start()
     {
-        //photoOneImage.SetActive(false);
         canBorder.SetActive(false);
+
+        photoRenderTexture = new RenderTexture(256, 256, 16, RenderTextureFormat.ARGB32);
     }
     void Update()
     {
         if (photoTaken)
         {
-            this.GetComponent<Camera>().targetTexture = cameraRenderTexture;
-        }
+            Artifact a = hit.transform.gameObject.GetComponent<Artifact>();
+            if (journalManager.Elements.ContainsKey(a))
+            {
+                JournalElement je = journalManager.Elements[a];
+                je.CapturedPhoto = ToTexture2D(photoRenderTexture);
+            }
+            
 
-        RaycastHit hit;
+            this.GetComponent<Camera>().targetTexture = cameraRenderTexture;
+            photoTaken = false;
+        }
+        
         Vector3 fwd = transform.TransformDirection(Vector3.forward);
 
         if (cameraMenu.activeSelf)
@@ -43,11 +52,9 @@ public class TakePhoto : MonoBehaviour
                     canBorder.SetActive(true);
                     if (Input.GetKeyDown(KeyCode.G))
                     {
-                        if (Physics.Raycast(transform.position, fwd, out hit))
-                                Debug.Log("hit artifact");
-                                this.GetComponent<Camera>().targetTexture = photoOneTexture;
-                                //photoOneImage.SetActive(true);
-                                photoTaken = true;
+                        Debug.Log("hit artifact " + hit.transform.gameObject.name);
+                        this.GetComponent<Camera>().targetTexture = photoRenderTexture;
+                        photoTaken = true;
                     }
                 } else
                 {
@@ -58,5 +65,14 @@ public class TakePhoto : MonoBehaviour
                 canBorder.SetActive(false);
             }
         }
+    }
+
+    Texture2D ToTexture2D(RenderTexture rTex)
+    {
+        Texture2D tex = new Texture2D(rTex.width, rTex.height, TextureFormat.RGB24, false);
+        RenderTexture.active = rTex;
+        tex.ReadPixels(new Rect(0, 0, rTex.width, rTex.height), 0, 0);
+        tex.Apply();
+        return tex;
     }
 }

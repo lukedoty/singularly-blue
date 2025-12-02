@@ -75,9 +75,9 @@ Material:
     m_Floats:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
-    - _Bias: 0.5
+    - _Bias: 0.34
     - _BumpScale: 1
-    - _Contrast: 1.25
+    - _Contrast: 1.62
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0

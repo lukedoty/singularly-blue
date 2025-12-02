@@ -1,66 +1,97 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using TheFirstPerson;
 
 public class UIToggle : MonoBehaviour
 {
-    private GameObject inventoryMenu;
+    private GameObject journalMenu;
     private GameObject cameraMenu;
+    private GameObject pauseMenu;
 
     [SerializeField]
-    private KeyCode inventoryToggleKey = KeyCode.Tab;
+    private KeyCode journalToggleKey = KeyCode.Tab;
     [SerializeField]
     private KeyCode cameraToggleKey = KeyCode.C;
     [SerializeField]
+    private KeyCode pauseToggleKey = KeyCode.Escape;
+    [SerializeField]
     private GameObject paintCan;
-
-    private bool inventoryOpen;
-    private bool cameraOpen;
 
     // Start is called on the first frame
     private void Start()
     {
-        inventoryMenu = GameObject.FindWithTag("Journal");
-        inventoryMenu.SetActive(false);
-        inventoryOpen = inventoryMenu.activeSelf;
+        journalMenu = GameObject.FindWithTag("Journal");
+        journalMenu.SetActive(false);
         cameraMenu = GameObject.FindWithTag("CameraUI");
         cameraMenu.SetActive(false);
-        cameraOpen = cameraMenu.activeSelf;
-
+        pauseMenu = GameObject.FindWithTag("PauseMenu");
+        pauseMenu.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if you press the inventory key, it will enable/disable the inventory menu appropriately
-        if (Input.GetKeyDown(inventoryToggleKey))
+        //if you press the journal key, it will enable/disable the journal menu appropriately
+        if (Input.GetKeyDown(journalToggleKey))
         {
-            if (inventoryOpen)
+            if (journalMenu.activeSelf)
             {
-                inventoryOpen = false;
-                inventoryMenu.SetActive(false);
+                journalMenu.SetActive(false);
             }
             else
             {
-                inventoryOpen = true;
-                inventoryMenu.SetActive(true);
+                journalMenu.SetActive(true);
             }
         }
 
-        if (Input.GetKeyDown(cameraToggleKey) && !inventoryOpen)
+        if (Input.GetKeyDown(cameraToggleKey) && !journalMenu.activeSelf)
         {
-            if (cameraOpen)
+            if (cameraMenu.activeSelf)
             {
-                cameraOpen = false;
                 cameraMenu.SetActive(false);
                 paintCan.SetActive(true);
             }
             else
             {
-                cameraOpen = true;
                 cameraMenu.SetActive(true);
                 paintCan.SetActive(false);
             }
+        }
+
+        if (Input.GetKeyDown(pauseToggleKey))
+        {
+            if (pauseMenu.activeSelf)
+            {
+                pauseMenu.SetActive(false);
+                GetComponent<FPSController>().mouseLookEnabled = true;
+                GetComponent<FPSController>().mouseLocked = true;
+                toggleInputs();
+            } else
+            {
+                pauseMenu.SetActive(true);
+                GetComponent<FPSController>().mouseLookEnabled = false;
+                GetComponent<FPSController>().mouseLocked = false;
+                toggleInputs();
+            }
+        }
+    }
+
+    public void toggleInputs()
+    {
+        if (journalToggleKey == KeyCode.Tab)
+        {
+            journalToggleKey = KeyCode.None;
+            cameraToggleKey = KeyCode.None;
+            pauseToggleKey = KeyCode.None;
+            paintCan.GetComponent<PaintCan>().SprayKey = KeyCode.None;
+        } else
+        {
+            journalToggleKey = KeyCode.Tab;
+            cameraToggleKey = KeyCode.C;
+            pauseToggleKey = KeyCode.Escape;
+            paintCan.GetComponent<PaintCan>().SprayKey = KeyCode.Mouse0;
         }
     }
 }

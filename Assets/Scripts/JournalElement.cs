@@ -8,18 +8,18 @@ public class JournalElement : MonoBehaviour
     public Artifact Artifact => m_artifact;
 
     [SerializeField]
-    private Sprite m_taskPhoto;
+    private Texture2D m_taskPhoto;
 
     public Texture2D CapturedPhoto;
 
     [SerializeField]
-    private Image m_taskPhotoUI;
+    private RawImage m_taskPhotoUI;
     [SerializeField]
     private RawImage m_capturedPhotoUI;
 
     private void Start()
     {
-        m_taskPhotoUI.sprite = m_taskPhoto;
+        m_taskPhotoUI.texture = m_taskPhoto;
         m_capturedPhotoUI.texture = CapturedPhoto;
     }
 

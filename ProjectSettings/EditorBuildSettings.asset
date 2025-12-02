@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Dev/Jay Dev/demo city 5.unity
     guid: d48bfe69fde64da4faeeafe1e8683605
+  - enabled: 1
+    path: Assets/Dev/Joy Dev/JoyMainMenu.unity
+    guid: 35820cf76d774c74ebbf3fef33e1dfbd
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

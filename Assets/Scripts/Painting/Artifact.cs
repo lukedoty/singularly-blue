@@ -12,7 +12,6 @@ public class Artifact : MonoBehaviour
 
     private readonly string m_artifactPropertyName = "_Artifact";
 
-
     private Paintable m_paintable;
     private Texture2D m_paintTexture;
     private MaterialPropertyBlock m_materialPB;

@@ -213,15 +213,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 483446292620484875, guid: 24fb232a54be17b47b79fbffaa86c558, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -901.45056
+      value: -82.33
       objectReference: {fileID: 0}
     - target: {fileID: 483446292620484875, guid: 24fb232a54be17b47b79fbffaa86c558, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -724.3816
+      value: -98.47
       objectReference: {fileID: 0}
     - target: {fileID: 483446292620484875, guid: 24fb232a54be17b47b79fbffaa86c558, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1017.0024
+      value: -300.97
       objectReference: {fileID: 0}
     - target: {fileID: 483446292620484875, guid: 24fb232a54be17b47b79fbffaa86c558, type: 3}
       propertyPath: m_LocalRotation.w
@@ -259,11 +259,43 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3047564652788467203, guid: 24fb232a54be17b47b79fbffaa86c558, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7999280268495590981, guid: 24fb232a54be17b47b79fbffaa86c558, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 307053597095581779}
   m_SourcePrefab: {fileID: 100100000, guid: 24fb232a54be17b47b79fbffaa86c558, type: 3}
+--- !u!1 &3209261851513863121 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7999280268495590981, guid: 24fb232a54be17b47b79fbffaa86c558, type: 3}
+  m_PrefabInstance: {fileID: 4866897661582290324}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &307053597095581779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3209261851513863121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9268b7bb45b30724fbba979fba477967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxDistance: 10
+  PaintMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  BaseRadiusUV: 0.0004
+  RadiusPerMeter: 0.000175
+  Hardness: 0.9
+  SprayAdditiveLevel: 30
+  DistanceFalloffPower: 1.2
+  SprayKey: 323
+  SprayVFX: {fileID: 0}
 --- !u!4 &4989771183639825567 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 483446292620484875, guid: 24fb232a54be17b47b79fbffaa86c558, type: 3}

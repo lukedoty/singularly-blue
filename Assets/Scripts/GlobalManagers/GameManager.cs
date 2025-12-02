@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
     private SceneManager m_sceneManager;
     public static SceneManager SceneManager => Instance.m_sceneManager;
 
+    private StateManager m_stateManager;
+    public static StateManager StateManager => Instance.m_stateManager;
+
 
     private void Awake()
     {
@@ -15,5 +18,6 @@ public class GameManager : MonoBehaviour
         else Instance = this;
 
         m_sceneManager = GetComponent<SceneManager>();
+        m_stateManager = GetComponent<StateManager>();
     }
 }

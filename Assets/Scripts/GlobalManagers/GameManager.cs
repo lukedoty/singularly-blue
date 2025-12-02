@@ -19,5 +19,7 @@ public class GameManager : MonoBehaviour
 
         m_sceneManager = GetComponent<SceneManager>();
         m_stateManager = GetComponent<StateManager>();
+
+        Screen.SetResolution(1920, 1080, true);
     }
 }

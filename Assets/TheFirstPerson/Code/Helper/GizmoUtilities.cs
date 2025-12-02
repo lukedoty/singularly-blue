@@ -5,6 +5,8 @@ using UnityEngine;
 
 namespace TheFirstPerson.Helper
 {
+
+#if UNITY_EDITOR
     public static class GizmoUtilities
     {
         //Code by toomasio found at https://forum.unity.com/threads/drawing-capsule-gizmo.354634/
@@ -34,4 +36,6 @@ namespace TheFirstPerson.Helper
             }
         }
     }
+
+#endif
 }

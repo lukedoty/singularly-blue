@@ -17,13 +17,6 @@ public class SceneManager : MonoBehaviour
         LoadSceneAndSwap(m_startScene);
     }
 
-    private void Update()
-    {
-        // TODO:
-        // To be replaced by UI interaction
-        if (Input.GetKeyDown(KeyCode.End)) QuitApplication();
-    }
-
     public Coroutine LoadScene(string sceneName)
     {
         return StartCoroutine(ILoadScene(sceneName));

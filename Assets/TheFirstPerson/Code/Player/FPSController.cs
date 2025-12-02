@@ -203,7 +203,7 @@ namespace TheFirstPerson
         bool jumpHeld;
         bool crouching;
         bool running;
-        bool mouseLocked;
+        public bool mouseLocked;
         float jumpPressed;
         float xIn;
         float yIn;
@@ -672,17 +672,6 @@ namespace TheFirstPerson
 
         void UpdateMouseLock()
         {
-            if (mouseLockToggleEnabled && Time.timeScale > 0)
-            {
-                if (customInputSystem == null ? Input.GetButtonDown(unlockMouseBtn) : customInputSystem.UnlockMouseButton())
-                {
-                    mouseLocked = false;
-                }
-                else if (Input.GetMouseButtonDown(0))
-                {
-                    mouseLocked = true;
-                }
-            }
 
             if (mouseLocked)
             {

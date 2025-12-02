@@ -84,13 +84,11 @@ public class UIToggle : MonoBehaviour
         {
             journalToggleKey = KeyCode.None;
             cameraToggleKey = KeyCode.None;
-            pauseToggleKey = KeyCode.None;
             paintCan.GetComponent<PaintCan>().SprayKey = KeyCode.None;
         } else
         {
             journalToggleKey = KeyCode.Tab;
             cameraToggleKey = KeyCode.C;
-            pauseToggleKey = KeyCode.Escape;
             paintCan.GetComponent<PaintCan>().SprayKey = KeyCode.Mouse0;
         }
     }

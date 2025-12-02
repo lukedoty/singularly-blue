@@ -5,14 +5,16 @@ public class Paintable : MonoBehaviour
 {
 	public int TextureSize = 2048;
 
-	private readonly Color m_clearColor = new Color(0, 0, 0, 0);
+	public readonly Color m_clearColor = new Color(0, 0, 0, 0);
 	private readonly string paintPropertyName = "_Paint";
 
 	private Texture2D m_paintTexture;
 	public Texture2D PaintTexture => m_paintTexture;
 
 	private Renderer m_renderer;
+
 	private MaterialPropertyBlock m_materialPB;
+	public MaterialPropertyBlock MaterialPB => m_materialPB;
 
 	void Awake()
 	{

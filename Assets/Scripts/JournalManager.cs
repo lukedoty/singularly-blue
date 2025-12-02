@@ -16,6 +16,7 @@ public class JournalManager : MonoBehaviour
         JournalElement[] j = GetComponentsInChildren<JournalElement>();
         for (int i = 0; i < j.Length; i++)
         {
+            if (j[i].Artifact == null) continue;
             Elements.Add(j[i].Artifact, j[i]);
         }
     }

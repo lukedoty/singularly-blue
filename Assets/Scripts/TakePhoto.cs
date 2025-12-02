@@ -47,7 +47,7 @@ public class TakePhoto : MonoBehaviour
         {
             if (Physics.Raycast(transform.position, fwd, out hit))
             {
-                if (hit.transform.gameObject.GetComponent<Artifact>())
+                if (hit.transform.gameObject.GetComponent<Artifact>() && hit.transform.gameObject.GetComponent<Artifact>().CalculateArtifactCoverage() >= 1)
                 {
                     canBorder.SetActive(true);
                     if (Input.GetKeyDown(KeyCode.G))

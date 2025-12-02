@@ -25,7 +25,6 @@ public class JournalElement : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(CapturedPhoto);
         if (CapturedPhoto == null) m_capturedPhotoUI.enabled = false;
         else if (m_capturedPhotoUI.enabled == false)
         {

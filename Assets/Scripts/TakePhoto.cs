@@ -2,6 +2,7 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class TakePhoto : MonoBehaviour
 {
@@ -30,8 +31,6 @@ public class TakePhoto : MonoBehaviour
             this.GetComponent<Camera>().targetTexture = cameraRenderTexture;
         }
 
-        canBorder.SetActive(false);
-
         RaycastHit hit;
         Vector3 fwd = transform.TransformDirection(Vector3.forward);
 
@@ -45,15 +44,18 @@ public class TakePhoto : MonoBehaviour
                     if (Input.GetKeyDown(KeyCode.G))
                     {
                         if (Physics.Raycast(transform.position, fwd, out hit))
-                            if (hit.transform.gameObject.GetComponent<Artifact>())
-                            {
                                 Debug.Log("hit artifact");
                                 this.GetComponent<Camera>().targetTexture = photoOneTexture;
                                 //photoOneImage.SetActive(true);
                                 photoTaken = true;
-                            }
                     }
+                } else
+                {
+                    canBorder.SetActive(false);
                 }
+            } else
+            {
+                canBorder.SetActive(false);
             }
         }
     }

@@ -1110,7 +1110,7 @@ MonoBehaviour:
   customCameraTransform: 0
   customInputNames: 0
   airControl: 0.447
-  airSprintEnabled: 0
+  airSprintEnabled: 1
   normaliseMoveInput: 0
   moveInFixedUpdate: 0
   cam: {fileID: 0}

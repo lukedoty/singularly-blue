@@ -1963,7 +1963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bb0ba15432676547af2275b0f85fbe8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newScene: MainScene
+  newScene: new art scene
 --- !u!114 &2112819886
 MonoBehaviour:
   m_ObjectHideFlags: 0

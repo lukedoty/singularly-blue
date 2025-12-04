@@ -35,6 +35,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Dev/Jay Dev/main scene copy 2.unity
     guid: af5b3a42fde6e17489a4352c2c5dfe11
+  - enabled: 1
+    path: Assets/Dev/Jay Dev/new art scene.unity
+    guid: 49b2ea8e566f5774b9e8a53314ae0a03
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
